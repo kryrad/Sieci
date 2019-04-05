@@ -14,9 +14,8 @@ StandardScaler(copy=True, with_mean=True, with_std=True)
 x_train = scaler.transform(x_train)
 x_test = scaler.transform(x_test)
 
-
 from sklearn.neural_network import MLPClassifier
-mlp = MLPClassifier(hidden_layer_sizes=(20,20,20,20),max_iter=2000, alpha=0.00001)
+mlp = MLPClassifier(hidden_layer_sizes=(38,38,38),max_iter=2500,alpha=0.0001,activation='relu', learning_rate_init=0.009)
 mlp.fit(x_train,y_train)
 
 predictions = mlp.predict(x_test)
